@@ -1,0 +1,430 @@
+
+/* =========================================
+   DEPARTEMEN & BIRO
+   Pattern kuning, card hijau, carousel
+========================================= */
+
+.departemen-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 55px 0 35px;
+  background-color: #faf8f1;
+  color: #173f2b;
+  font-family: var(--font-body, "Work Sans", sans-serif);
+}
+
+/* Pattern kuning */
+.departemen-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%) scaleY(-1);
+  transform-origin: center;
+  background-image: url("../assets/pattern-yellow.png");
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: 100% auto;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* Lapisan warna lembut */
+.departemen-section::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(239, 198, 106, 0.16) 0%,
+    rgba(239, 198, 106, 0.08) 45%,
+    rgba(250, 248, 241, 0.2) 100%
+  );
+  pointer-events: none;
+}
+
+/* Konten */
+.departemen-section > .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   JUDUL DAN GARIS EMAS
+========================================= */
+
+.departemen-section .section-head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 0 28px;
+  padding: 0 0 22px;
+  border-bottom: 1px solid rgba(7, 91, 53, 0.2);
+}
+
+.departemen-section .section-head::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100px;
+  height: 2px;
+  background: #c99a3b;
+}
+
+.departemen-section .section-head h2 {
+  margin: 0;
+  color: #075b35;
+  font-family: var(--font-display, "Fraunces", Georgia, serif);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+
+/* =========================================
+   DESKRIPSI
+========================================= */
+
+.departemen-section .departemen-intro {
+  max-width: 850px;
+  margin: 0 0 8px;
+  color: #344b3c;
+  font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+/* =========================================
+   CAROUSEL
+========================================= */
+
+#dept-list {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 28px 4px 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  cursor: grab;
+}
+
+#dept-list:active {
+  cursor: grabbing;
+}
+
+#dept-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================
+   CARD DEPARTEMEN
+========================================= */
+
+#dept-list .dept-card {
+  position: relative;
+  display: block;
+  flex: 0 0 230px;
+  width: 230px;
+  min-width: 230px;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0;
+
+  background-color: #e8eadf;
+  border: 1px solid rgba(7, 86, 55, 0.12);
+  border-radius: 14px;
+
+  opacity: 0.9;
+  transform: translateY(0);
+  cursor: pointer;
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s ease,
+    opacity 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* =========================================
+   FOTO DEPARTEMEN
+========================================= */
+
+#dept-list .dept-card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 250px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  /* Background sudut foto sama dengan card */
+  background-color: #e8eadf;
+
+  /* Card yang memotong sudut, bukan foto */
+  border-radius: 0;
+}
+
+#dept-list .dept-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+
+  /* Tampilkan foto utuh */
+  object-fit: contain;
+  object-position: center;
+
+  border-radius: 0;
+  pointer-events: none;
+
+  transition: transform 0.35s ease;
+}
+
+/* =========================================
+   INFORMASI DEPARTEMEN
+========================================= */
+
+#dept-list .dept-card-info {
+  position: relative;
+  min-height: 94px;
+  padding: 17px 13px 19px;
+  box-sizing: border-box;
+
+  background-color: #e8eadf;
+  border-top: 2px solid #c99a3b;
+  text-align: left;
+
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+#dept-list .dept-card-info h3 {
+  margin: 0 0 7px;
+  color: #075637;
+  font-family: var(--font-display, "Fraunces", Georgia, serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+
+  transition: color 0.35s ease;
+}
+
+#dept-list .dept-card-info span {
+  color: #69766b;
+  font-family: var(--font-body, "Work Sans", sans-serif);
+  font-size: 0.77rem;
+  line-height: 1.5;
+
+  transition: color 0.35s ease;
+}
+
+/* =========================================
+   HOVER — HIJAU DAN ANIMASI
+========================================= */
+
+#dept-list .dept-card:hover {
+  z-index: 3;
+  opacity: 1;
+  background-color: #164b35;
+  border-color: #164b35;
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(22, 75, 53, 0.2);
+}
+
+#dept-list .dept-card:hover .dept-card-info {
+  background-color: #164b35;
+  border-top-color: #c99a3b;
+}
+
+#dept-list .dept-card:hover .dept-card-info h3 {
+  color: #ffffff;
+}
+
+#dept-list .dept-card:hover .dept-card-info span {
+  color: #e1eadf;
+}
+
+#dept-list .dept-card:hover .dept-card-image img {
+  transform: scale(1.02);
+}
+
+/* Fokus keyboard */
+#dept-list .dept-card:focus-visible {
+  outline: 3px solid #c99a3b;
+  outline-offset: 4px;
+  opacity: 1;
+}
+
+/* =========================================
+   CARD AKTIF
+========================================= */
+
+#dept-list .dept-card.is-active {
+  z-index: 2;
+  opacity: 1;
+  transform: translateY(0);
+  border-color: rgba(198, 154, 61, 0.75);
+  box-shadow: 0 16px 36px rgba(18, 48, 35, 0.16);
+}
+
+#dept-list .dept-card.is-active:hover {
+  transform: translateY(-6px);
+  border-color: #164b35;
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 860px) {
+  .departemen-section {
+    padding: 40px 0 20px;
+  }
+
+  .departemen-section > .wrap {
+    width: calc(100% - 48px);
+  }
+
+  .departemen-section .section-head h2 {
+    font-size: clamp(2rem, 5vw, 2.7rem);
+  }
+
+  #dept-list {
+    gap: 18px;
+    padding: 24px 4px 20px;
+  }
+
+  #dept-list .dept-card {
+    flex-basis: 205px;
+    width: 205px;
+    min-width: 205px;
+  }
+
+  #dept-list .dept-card-image {
+    height: 220px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — HP
+========================================= */
+
+@media (max-width: 600px) {
+  .departemen-section {
+    padding: 35px 0 16px;
+  }
+
+  .departemen-section::before {
+    width: 115vw;
+    opacity: 0.17;
+  }
+
+  .departemen-section::after {
+    background: radial-gradient(
+      ellipse 300px 350px at 50% 50%,
+      rgba(239, 198, 106, 0.23) 0%,
+      rgba(239, 198, 106, 0.1) 55%,
+      transparent 100%
+    );
+  }
+
+  .departemen-section > .wrap {
+    width: calc(100% - 28px);
+  }
+
+  .departemen-section .section-head {
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 15px;
+  }
+
+  .departemen-section .section-head::after {
+    width: 72px;
+  }
+
+  .departemen-section .section-head h2 {
+    font-size: clamp(1.8rem, 8vw, 2.3rem);
+    line-height: 1.15;
+  }
+
+  .departemen-section .departemen-intro {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  #dept-list {
+    gap: 14px;
+    padding: 20px 3px 16px;
+  }
+
+  #dept-list .dept-card {
+    flex-basis: 175px;
+    width: 175px;
+    min-width: 175px;
+  }
+
+  #dept-list .dept-card-image {
+    height: 190px;
+  }
+
+  #dept-list .dept-card-info {
+    min-height: 84px;
+    padding: 14px 11px 16px;
+  }
+
+  #dept-list .dept-card-info h3 {
+    font-size: 0.95rem;
+  }
+
+  #dept-list .dept-card-info span {
+    font-size: 0.73rem;
+  }
+}
+
+/* =========================================
+   AKSESIBILITAS
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  #dept-list .dept-card,
+  #dept-list .dept-card-image img,
+  #dept-list .dept-card-info,
+  #dept-list .dept-card-info h3,
+  #dept-list .dept-card-info span {
+    transition: none;
+  }
+
+  #dept-list .dept-card:hover,
+  #dept-list .dept-card.is-active:hover {
+    transform: none;
+  }
+
+  #dept-list .dept-card:hover .dept-card-image img {
+    transform: none;
+  }
+}

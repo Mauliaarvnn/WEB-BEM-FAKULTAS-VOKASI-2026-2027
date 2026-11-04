@@ -1,0 +1,221 @@
+
+/* =========================================================
+   HEADER & NAVIGATION
+   Kabinet Vokasi Berdaya — BEM Fakultas Vokasi USU
+   ========================================================= */
+
+/* ---------- TOPBAR INSTITUSI ---------- */
+
+.topbar {
+  background: var(--color-green-900);
+  color: #ffffff;
+  font-size: 0.75rem;
+  letter-spacing: 0.025em;
+}
+
+.topbar .wrap {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.topbar a {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.topbar a:hover,
+.topbar a:focus-visible {
+  color: #f0cf83;
+}
+
+/* ---------- HEADER UTAMA ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 3px 16px rgba(20, 52, 35, 0.035);
+}
+
+.site-header .wrap {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* ---------- IDENTITAS KABINET ---------- */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.brand-text strong {
+  display: block;
+  color: var(--color-green-900);
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.brand-text > span {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.brand-text .brand-cabinet {
+  color: var(--color-gold-dark);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+/* ---------- NAVIGASI DESKTOP ---------- */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 8px 15px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  bottom: 2px;
+  left: 15px;
+  height: 2px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible,
+.main-nav a[aria-current="page"] {
+  color: var(--color-green-900);
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus-visible::after,
+.main-nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* ---------- TOMBOL MENU MOBILE ---------- */
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 13px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--color-green-900);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-toggle:hover {
+  border-color: var(--color-green-700);
+  background: var(--color-green-100);
+}
+
+/* ---------- REDUKSI ANIMASI ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar a,
+  .main-nav a,
+  .main-nav a::after {
+    transition: none;
+  }
+}
+/* TOPBAR + NAVBAR — CLEAN WHITE */
+
+.topbar {
+  background: #ffffff;
+  border-bottom: none;
+}
+
+.topbar .wrap {
+  min-height: 32px;
+}
+
+.topbar a {
+  color: #59685d;
+  font-size: 0.72rem;
+}
+
+.topbar a:hover {
+  color: #075d3a;
+}
+
+.site-header {
+  background: #ffffff;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.site-header .wrap {
+  background: #ffffff;
+}

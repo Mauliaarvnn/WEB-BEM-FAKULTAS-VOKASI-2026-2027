@@ -1,0 +1,292 @@
+
+/* =========================================
+   HERO BERITA — KABINET VOKASI BERDAYA
+========================================= */
+
+.news-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 400px;
+  align-items: center;
+  overflow: hidden;
+  background: #0b3928;
+  color: #fff;
+}
+
+.news-hero-building {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      #0b3928 0%,
+      rgba(11, 57, 40, 0.96) 15%,
+      rgba(11, 57, 40, 0.82) 30%,
+      rgba(11, 57, 40, 0.55) 45%,
+      rgba(11, 57, 40, 0.20) 65%,
+      rgba(11, 57, 40, 0.04) 100%
+    ),
+    url("../assets/gedung-vokasi.jpg");
+
+  background-position: center, center 46%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  animation: news-building-enter 1.2s ease both;
+}
+
+.news-hero-pattern {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+
+  background-image: url("../assets/pattern-yellow.png");
+  background-position: left center;
+  background-repeat: repeat;
+  background-size: 360px auto;
+
+  opacity: 0.70;
+
+  mask-image: linear-gradient(
+    90deg,
+    #000 0%,
+    rgba(0, 0, 0, 0.8) 35%,
+    transparent 85%
+  );
+}
+
+.news-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, calc(100% - 64px));
+  margin-inline: auto;
+  padding-top: 45px;
+  padding-bottom: 125px;
+
+  animation: news-content-enter 0.8s ease both;
+}
+
+/* Breadcrumb */
+
+.news-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 42px;
+
+  color: #d9e4d6;
+  font-size: 12px;
+}
+
+.news-breadcrumb a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.25s;
+}
+
+.news-breadcrumb a:hover {
+  color: #d8b64c;
+}
+
+/* Teks kecil */
+
+.news-eyebrow {
+  margin: 0 0 12px;
+  color: #d8b64c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+/* Judul hero */
+
+/* Judul hero Berita — disamakan dengan Beranda */
+
+.news-hero h1 {
+  max-width: 1000px;
+  margin: 0;
+
+  color: #fffdf3;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6.5vw, 5.8rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+}
+
+.news-hero h1 > span {
+  display: block;
+  color: #dce8d6;
+}
+
+
+/* Deskripsi */
+
+.news-hero-description {
+  max-width: 440px;
+  margin: 24px 0 0;
+
+  color: #e3eadf;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Teks penutup */
+
+.news-hero-bottom {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 40px;
+
+  color: #d4e0d1;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.news-hero-line {
+  width: 65px;
+  height: 1px;
+  flex: 0 0 auto;
+  background: #d8b64c;
+}
+
+/* Gelombang bawah */
+
+.news-hero-wave {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+
+  width: 100%;
+  height: 100px;
+  line-height: 0;
+  pointer-events: none;
+}
+
+.news-hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Animasi */
+
+@keyframes news-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes news-building-enter {
+  from {
+    opacity: 0.3;
+    transform: scale(1.04);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .news-hero-building {
+    background-position: center, 58% center;
+  }
+}
+
+/* HP */
+
+@media (max-width: 600px) {
+  .news-hero {
+    min-height: 440px;
+  }
+
+  .news-hero-building {
+    inset: 0;
+    opacity: 0.8;
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(11, 57, 40, 0.96) 0%,
+        rgba(22, 75, 53, 0.78) 55%,
+        rgba(22, 75, 53, 0.45) 100%
+      ),
+      url("../assets/gedung-vokasi.jpg");
+
+    background-position: center, 57% center;
+  }
+
+  .news-hero-pattern {
+    background-size: 240px auto;
+    opacity: 0.12;
+  }
+
+  .news-hero-inner {
+    width: calc(100% - 36px);
+    padding-top: 30px;
+    padding-bottom: 115px;
+  }
+
+  .news-hero-wave {
+    height: 65px;
+  }
+
+  .news-breadcrumb {
+    margin-bottom: 34px;
+    font-size: 11px;
+  }
+
+  .news-eyebrow {
+    font-size: 9px;
+  }
+
+  .news-hero h1 {
+    font-size: clamp(45px, 12vw, 60px);
+  }
+
+  .news-hero-description {
+    max-width: 350px;
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
+  .news-hero-bottom {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+    font-size: 8px;
+  }
+}
+
+/* Aksesibilitas */
+
+@media (prefers-reduced-motion: reduce) {
+  .news-hero *,
+  .news-hero *::before,
+  .news-hero *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

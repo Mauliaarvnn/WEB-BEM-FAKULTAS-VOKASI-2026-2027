@@ -1,0 +1,313 @@
+
+/* ======================================
+   HERO — GREEN EDITORIAL
+   ====================================== */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 650px;
+  overflow: hidden;
+  background: #075d3a;
+  color: #fffdf3;
+}
+
+/* Foto gedung menyatu di kanan */
+.hero-building-bg {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      90deg,
+      #075d3a 0%,
+      rgba(7, 93, 58, 0.98) 32%,
+      rgba(7, 93, 58, 0.84) 49%,
+      rgba(7, 93, 58, 0.35) 74%,
+      rgba(7, 93, 58, 0.12) 100%
+    ),
+    url("../assets/gedung-vokasi.jpg");
+  background-size: cover;
+  background-position: center, center 43%;
+  background-repeat: no-repeat;
+}
+
+/* Pattern kabinet terlihat di atas hijau */
+.hero-pattern-bg {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background-image: url("../assets/Pattern.png");
+  background-position: left 30%;
+  background-repeat: repeat;
+  background-size: min(75vw, 900px) auto;
+  opacity: 0.50;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Lapisan tipis agar pattern tidak mengganggu judul */
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(7, 93, 58, 0.1),
+    rgba(7, 93, 58, 0.25) 48%,
+    rgba(7, 93, 58, 0.05)
+  );
+  pointer-events: none;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 100px 28px 92px;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  color: #f0cf73;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: #d5ad4f;
+}
+
+.hero h1 {
+  max-width: 1000px;
+  margin: 0 auto 24px;
+  color: #fffdf3;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6.5vw, 5.8rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+}
+
+.hero h1 > span {
+  display: block;
+}
+
+.hero h1 .hero-title-accent {
+  color: #f0cf73;
+}
+
+.hero-inner > p {
+  max-width: 620px;
+  margin: 0 auto 30px;
+  color: rgba(255, 253, 243, 0.84);
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 13px 23px;
+  border: 1px solid #f0cf73;
+  border-radius: 5px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hero-actions .btn-primary {
+  background: #f0cf73;
+  color: #073d2a;
+}
+
+.hero-actions .btn-primary:hover {
+  background: #ffdf8a;
+}
+
+.hero-actions .btn-outline {
+  border-color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fffdf3;
+}
+
+.hero-actions .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hero-signature {
+  margin-top: 38px;
+  color: rgba(255, 253, 243, 0.7);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+}
+
+/* Lengkungan bagian bawah hero */
+
+.hero {
+  padding-bottom: 100px;
+}
+
+.hero-bottom-line {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 110px;
+
+  background: #faf8f1;
+
+  clip-path: ellipse(75% 65% at 50% 100%);
+}
+
+/* ======================================
+   TABLET
+   ====================================== */
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 600px;
+  }
+
+  .hero-building-bg {
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(7, 93, 58, 0.82),
+        rgba(7, 93, 58, 0.95) 70%
+      ),
+      url("../assets/gedung-vokasi.jpg");
+    background-position: center, 58% center;
+  }
+
+  .hero-pattern-bg {
+    background-size: 115% auto;
+    background-position: center 35%;
+    opacity: 0.19;
+  }
+
+  .hero-inner {
+    padding: 85px 24px 75px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 8.5vw, 4.5rem);
+  }
+
+  .hero-inner > p {
+    max-width: 540px;
+    font-size: 0.92rem;
+  }
+}
+
+/* ======================================
+   HP
+   ====================================== */
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 570px;
+  }
+
+  .hero-inner {
+    padding: 70px 20px 65px;
+  }
+
+  .hero-eyebrow {
+    gap: 8px;
+    font-size: 0.58rem;
+    letter-spacing: 0.13em;
+  }
+
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    width: 16px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.35rem, 10.5vw, 3.2rem);
+    line-height: 1.08;
+  }
+
+  .hero-inner > p {
+    font-size: 0.87rem;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    gap: 9px;
+  }
+
+  .hero-actions .btn {
+    min-height: 44px;
+    padding: 11px 15px;
+    font-size: 0.78rem;
+  }
+
+  .hero-signature {
+    margin-top: 30px;
+    font-size: 0.54rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-pattern-bg {
+    background-size: 150% auto;
+    opacity: 0.15;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-actions .btn {
+    transition: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-bottom: 65px;
+  }
+
+  .hero-bottom-line {
+    height: 65px;
+    clip-path: ellipse(85% 65% at 50% 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-bottom: 45px;
+  }
+
+  .hero-bottom-line {
+    height: 45px;
+  }
+}

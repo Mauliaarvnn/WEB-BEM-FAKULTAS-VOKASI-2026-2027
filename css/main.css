@@ -1,0 +1,267 @@
+/* =========================================================
+   BEM Fakultas Vokasi USU
+   CSS GLOBAL / BASE
+   ========================================================= */
+
+:root {
+  --color-bg: #faf8f1;
+  --color-surface: #ffffff;
+
+  --color-green-900: #075b35;
+  --color-green-700: #0b6839;
+  --color-green-600: #2b7350;
+  --color-green-100: #e8f0e5;
+
+  --color-gold: #c99a3b;
+  --color-gold-dark: #a87e2c;
+
+  --color-text: #202a23;
+  --color-text-muted: #5b6760;
+  --color-border: #dfe5da;
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --max-width: 1200px;
+  --radius-sm: 5px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  font-family: var(--font-body);
+  line-height: 1.6;
+
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+section {
+  padding: 64px 0;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.section-head {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 24px;
+
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-head h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+
+  color: var(--color-green-900);
+}
+
+.section-head .link-more {
+  white-space: nowrap;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  color: var(--color-green-700);
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+.lead {
+  max-width: 68ch;
+
+  font-size: 1.05rem;
+
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 11px 22px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 0.94rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--color-green-700);
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--color-green-900);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: var(--color-green-700);
+  color: var(--color-green-700);
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: var(--color-green-100);
+  border-color: var(--color-green-900);
+}
+
+
+/* =========================================================
+   PARTNER LINKS
+   ========================================================= */
+
+.partner-links {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.partner-card {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 22px 24px;
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  color: var(--color-text);
+
+  text-decoration: none;
+
+  transition: border-color 0.15s ease;
+}
+
+.partner-card:hover,
+.partner-card:focus-visible {
+  border-color: var(--color-green-700);
+}
+
+.partner-card strong {
+  display: block;
+
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.partner-card span {
+  font-size: 0.85rem;
+
+  color: var(--color-text-muted);
+}
+
+.partner-card .arrow {
+  font-size: 1.3rem;
+
+  color: var(--color-gold-dark);
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+   ========================================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(16px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   KEYBOARD FOCUS
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-gold-dark);
+  outline-offset: 2px;
+}

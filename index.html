@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>BEM Fakultas Vokasi USU</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero-beranda.css">
+  <link rel="stylesheet" href="css/berita.css">
+  <link rel="stylesheet" href="css/tentang.css">
+  <link rel="stylesheet" href="css/mengenal-kami.css">
+  <link rel="stylesheet" href="css/bph.css">
+  <link rel="stylesheet" href="css/departemen.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+
+
+
+  <!-- ==================== HEADER ==================== -->
+
+  <header class="site-header">
+    <div class="wrap">
+
+      <a href="index.html" class="brand">
+
+        <img
+          src="assets/logo.png"
+          alt="Logo BEM Fakultas Vokasi USU"
+          class="brand-logo"
+        />
+
+        <span class="brand-text">
+          <strong>Kabinet Vokasi Berdaya</strong>
+          <span>Universitas Sumatera Utara</span>
+        </span>
+
+      </a>
+
+
+      <button
+        class="nav-toggle"
+        aria-label="Buka menu navigasi"
+        aria-expanded="false"
+      >
+        Menu
+      </button>
+
+
+      <nav class="main-nav">
+
+        <ul>
+
+          <li>
+            <a
+              href="index.html"
+              aria-current="page"
+            >
+              Beranda
+            </a>
+          </li>
+
+          <li>
+            <a href="tentang.html">
+              Tentang
+            </a>
+          </li>
+
+          <li>
+            <a href="berita.html">
+              Berita
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+
+  <!-- ==================== HERO ==================== -->
+
+
+
+
+
+<section class="hero">
+  <div class="hero-building-bg" aria-hidden="true"></div>
+  <div class="hero-pattern-bg" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <span class="hero-eyebrow">KABINET VOKASI BERDAYA</span>
+
+    <h1>
+      Mewadahi Aspirasi,
+      <span>Menggerakkan</span>
+      <span class="hero-title-accent">Mahasiswa Vokasi.</span>
+    </h1>
+
+    <p>
+      BEM Fakultas Vokasi USU adalah ruang bagi mahasiswa
+      untuk menyampaikan aspirasi, bertumbuh, dan bergerak
+      bersama membawa perubahan.
+    </p>
+
+    <div class="hero-actions">
+      <a href="tentang.html" class="btn btn-primary">
+        Kenali Kami <span aria-hidden="true">↗</span>
+      </a>
+      <a href="berita.html" class="btn btn-outline">
+        Lihat Berita
+      </a>
+    </div>
+
+    <div class="hero-signature">
+      BERGERAK · BERDAYA · BERDAMPAK
+    </div>
+  </div>
+
+  <div class="hero-bottom-line" aria-hidden="true"></div>
+</section>
+
+
+
+
+
+<div class="hero-pattern" aria-hidden="true"></div>
+
+
+<!-- ==================== SIAPA KAMI ==================== -->
+
+<section class="about-intro reveal">
+  <div class="wrap">
+    
+  <div class="about-editorial-heading">
+    <span class="about-eyebrow">MENGENAL KAMI</span>
+
+    <a href="tentang.html" class="about-more-link">
+      Selengkapnya <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+
+
+    <div class="about-editorial-content">
+      <div class="about-editorial-main">
+        <h2>
+          Lebih dari sekadar
+          <span>organisasi.</span>
+        </h2>
+
+        <p class="about-description">
+          BEM Fakultas Vokasi USU merupakan wadah eksekutif mahasiswa
+          yang menjembatani aspirasi, mengembangkan potensi, dan
+          menggerakkan kegiatan mahasiswa vokasi.
+        </p>
+
+        <a href="tentang.html" class="about-cta">
+          Kenali BEM Kami
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      
+      <div class="about-editorial-photo">
+        <img
+          src="assets/foto-bem.jpg"
+          alt="Foto bersama pengurus BEM Fakultas Vokasi USU"
+        />
+        <div class="about-photo-caption">
+          <span>KABINET VOKASI BERDAYA</span>
+          <p>Bertumbuh bersama, bergerak untuk mahasiswa.</p>
+        </div>
+      </div>
+
+
+        
+
+        
+      </div>
+    </div>
+
+    
+</section>
+
+
+
+
+  <!-- ==================== BPH ==================== -->
+
+ <section class="bph-section reveal">
+
+    <div class="wrap">
+
+      <div class="section-head">
+
+        <h2>
+          Badan Pengurus Harian
+        </h2>
+
+        <a
+          href="tentang.html"
+          class="link-more"
+        >
+          Selengkapnya &rsaquo;
+        </a>
+
+      </div>
+
+
+      <!--
+        BPH di-generate otomatis dari bphData
+        di data-pengurus.js.
+      -->
+
+      <div
+        class="bph-grid"
+        id="bph-grid"
+      ></div>
+
+    </div>
+
+  </section>
+
+
+
+
+ <!-- ==================== MODAL DEPARTEMEN ==================== -->
+
+<div
+  class="dept-modal"
+  id="dept-modal"
+  aria-hidden="true"
+>
+
+  <div
+    class="dept-modal-content"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="dept-modal-title"
+  >
+
+    <!-- TOMBOL CLOSE -->
+
+    <button
+      class="dept-modal-close"
+      type="button"
+      aria-label="Tutup"
+    >
+      &times;
+    </button>
+
+
+    <!-- HEADER MODAL -->
+
+    <div class="dept-modal-header">
+
+      <!-- FOTO DEPARTEMEN -->
+
+      <div class="dept-modal-image">
+
+        <img
+          class="dept-modal-photo"
+          src=""
+          alt=""
+        />
+
+      </div>
+
+
+      <!-- INFORMASI DEPARTEMEN -->
+
+      <div class="dept-modal-heading">
+
+        <span>
+          DEPARTEMEN &amp; BIRO
+        </span>
+
+        <h2
+          class="dept-modal-title"
+          id="dept-modal-title"
+        ></h2>
+
+        <p class="dept-modal-desc"></p>
+
+
+        <!-- JUMLAH ANGGOTA -->
+
+        <div class="dept-modal-count">
+
+          <span class="dept-modal-member-count">
+            0 anggota
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ==================== PENGURUS ==================== -->
+
+    <div class="dept-modal-section">
+
+      <h3>
+        Pengurus Bidang
+      </h3>
+
+
+      <div class="dept-lead">
+
+        <div>
+
+          <span>
+            Kepala Departemen
+          </span>
+
+          <strong class="dept-modal-leader">
+            -
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            Sekretaris Departemen
+          </span>
+
+          <strong class="dept-modal-secretary">
+            -
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ==================== ANGGOTA ==================== -->
+
+    <div class="dept-modal-section">
+
+      <h3>
+        Anggota
+      </h3>
+
+
+      <ul class="dept-modal-members">
+        <!-- Diisi otomatis oleh data-pengurus.js -->
+      </ul>
+
+    </div>
+
+
+
+    <!-- ==================== PROGRAM KERJA ==================== -->
+
+    <div class="dept-modal-section">
+
+      <h3>
+        Program Kerja
+      </h3>
+
+
+      <div class="dept-modal-proker">
+        <!-- Diisi otomatis oleh data-pengurus.js -->
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+  <!-- ==================== BERITA TERBARU ==================== -->
+
+  <section class="reveal">
+
+    <div class="wrap">
+
+      <div class="section-head">
+
+        <h2>
+          Berita Terbaru
+        </h2>
+
+        <a
+          href="berita.html"
+          class="link-more"
+        >
+          Semua Berita &rsaquo;
+        </a>
+
+      </div>
+
+
+      <div
+        class="news-grid"
+        id="berita-preview"
+      >
+        <!--
+          Diisi otomatis oleh script.js
+          dari data berita.
+        -->
+      </div>
+
+    </div>
+
+  </section>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/footer.js"></script>
+
+
+
+  <!-- ==================== SCRIPT ==================== -->
+
+  <!--
+    data-pengurus.js harus dipanggil lebih dulu
+    karena berisi data dan fungsi untuk:
+    - BPH
+    - Departemen & Biro
+    - Carousel
+    - Modal Departemen
+  -->
+
+<script src="js/data-pengurus.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/pengurus.js"></script>
+<script src="script.js"></script>
+<script src="js/berita-page.js"></script>
+<script src="js/mengenal-kami.js"></script>
+
+</body>
+</html>

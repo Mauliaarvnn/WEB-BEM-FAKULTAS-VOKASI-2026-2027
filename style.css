@@ -1,0 +1,1594 @@
+/* =========================================================
+   BEM FAKULTAS VOKASI USU
+   MAIN STYLESHEET
+   ========================================================= */
+
+/* =========================================================
+   1. VARIABLES
+   ========================================================= */
+
+:root {
+  --color-bg: #faf8f1;
+  --color-surface: #ffffff;
+
+  --color-green-900: #006633;
+  --color-green-700: #0b6839;
+  --color-green-600: #2b7350;
+  --color-green-100: #e4efe6;
+
+  --color-gold: #c99a3b;
+  --color-gold-dark: #a87e2c;
+
+  --color-text: #1c2620;
+  --color-text-muted: #5b6760;
+  --color-border: #dde3da;
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --max-width: 1120px;
+  --radius-sm: 4px;
+}
+
+
+/* =========================================================
+   2. RESET & GLOBAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+/* =========================================================
+   3. TOPBAR
+   ========================================================= */
+
+.topbar {
+  background: var(--color-green-900);
+  color: #eef3ee;
+  font-size: 0.85rem;
+}
+
+.topbar .wrap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.topbar a {
+  text-decoration: none;
+  color: #dce8de;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.topbar a:hover,
+.topbar a:focus-visible {
+  border-color: var(--color-gold);
+}
+
+
+/* =========================================================
+   4. HEADER & NAVIGATION
+   ========================================================= */
+
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: var(--color-green-700);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+
+  flex-shrink: 0;
+}
+
+.brand-text strong {
+  display: block;
+
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.brand-text span {
+  display: block;
+
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.main-nav ul {
+  list-style: none;
+
+  display: flex;
+  gap: 28px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  color: var(--color-text-muted);
+
+  padding-bottom: 4px;
+
+  border-bottom: 2px solid transparent;
+
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible,
+.main-nav a[aria-current="page"] {
+  color: var(--color-green-700);
+  border-color: var(--color-gold);
+}
+
+.nav-toggle {
+  display: none;
+
+  background: none;
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-sm);
+
+  padding: 8px 10px;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   5. HERO
+   ========================================================= */
+
+.hero {
+  background:
+    linear-gradient(
+      180deg,
+      var(--color-green-100) 0%,
+      var(--color-bg) 100%
+    );
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero .wrap {
+  padding-top: 72px;
+  padding-bottom: 72px;
+
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 48px;
+
+  align-items: center;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+
+  font-size: clamp(2.1rem, 4vw, 3rem);
+
+  line-height: 1.15;
+
+  margin: 0 0 20px;
+
+  color: var(--color-green-900);
+}
+
+.hero p {
+  font-size: 1.05rem;
+
+  color: var(--color-text-muted);
+
+  max-width: 46ch;
+
+  margin: 0 0 28px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-figure {
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-sm);
+
+  padding: 28px;
+}
+
+.hero-figure dl {
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 24px;
+}
+
+.hero-figure dt {
+  font-family: var(--font-display);
+
+  font-size: 1.9rem;
+
+  color: var(--color-green-700);
+}
+
+.hero-figure dd {
+  margin: 4px 0 0;
+
+  font-size: 0.85rem;
+
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   6. BUTTON
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 11px 22px;
+
+  border-radius: var(--radius-sm);
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  border: 1px solid transparent;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--color-green-700);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--color-green-900);
+}
+
+.btn-outline {
+  background: transparent;
+
+  border-color: var(--color-green-700);
+
+  color: var(--color-green-700);
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: var(--color-green-100);
+}
+
+
+/* =========================================================
+   7. GENERAL SECTION
+   ========================================================= */
+
+section {
+  padding: 64px 0;
+}
+
+.section-head {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 24px;
+
+  margin-bottom: 32px;
+
+  border-bottom: 1px solid var(--color-border);
+
+  padding-bottom: 20px;
+}
+
+.section-head h2 {
+  font-family: var(--font-display);
+
+  font-size: 1.7rem;
+
+  margin: 0;
+
+  color: var(--color-green-900);
+}
+
+.section-head .link-more {
+  text-decoration: none;
+
+  color: var(--color-green-700);
+
+  font-weight: 500;
+  font-size: 0.9rem;
+
+  white-space: nowrap;
+}
+
+.lead {
+  font-size: 1.05rem;
+
+  color: var(--color-text-muted);
+
+  max-width: 68ch;
+}
+
+
+/* =========================================================
+   8. NEWS CARD
+   ========================================================= */
+
+.news-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+.news-card {
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-sm);
+
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.news-card time {
+  font-size: 0.8rem;
+
+  color: var(--color-gold-dark);
+
+  font-weight: 600;
+}
+
+.news-card h3 {
+  font-family: var(--font-display);
+
+  font-size: 1.15rem;
+
+  margin: 0;
+
+  line-height: 1.3;
+}
+
+.news-card p {
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.92rem;
+}
+
+.news-card .tag {
+  align-self: flex-start;
+
+  font-size: 0.72rem;
+
+  color: var(--color-green-700);
+
+  background: var(--color-green-100);
+
+  padding: 3px 10px;
+
+  border-radius: 999px;
+}
+
+
+/* =========================================================
+   9. PARTNER LINKS
+   ========================================================= */
+
+.partner-links {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.partner-card {
+  border: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+
+  border-radius: var(--radius-sm);
+
+  padding: 22px 24px;
+
+  text-decoration: none;
+
+  color: var(--color-text);
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  transition: border-color 0.15s ease;
+}
+
+.partner-card:hover,
+.partner-card:focus-visible {
+  border-color: var(--color-green-700);
+}
+
+.partner-card strong {
+  display: block;
+
+  font-family: var(--font-display);
+
+  font-size: 1.05rem;
+}
+
+.partner-card span {
+  font-size: 0.85rem;
+
+  color: var(--color-text-muted);
+}
+
+.partner-card .arrow {
+  color: var(--color-gold-dark);
+
+  font-size: 1.3rem;
+}
+
+
+/* =========================================================
+   10. PAGE HEADER
+   ========================================================= */
+
+.page-header {
+  background: var(--color-green-900);
+
+  color: #eef3ee;
+}
+
+.page-header .wrap {
+  padding: 48px 24px 56px;
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+
+  margin: 0 0 12px;
+}
+
+.page-header p {
+  color: #cddccf;
+
+  max-width: 60ch;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   11. TWO COLUMN
+   ========================================================= */
+
+.two-col {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 48px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   12. MISI
+   ========================================================= */
+
+.misi-list {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.misi-list li {
+  display: flex;
+
+  gap: 14px;
+
+  align-items: flex-start;
+
+  padding: 14px 16px;
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-sm);
+}
+
+.misi-list li::before {
+  content: "";
+
+  width: 8px;
+  height: 8px;
+
+  margin-top: 8px;
+
+  border-radius: 50%;
+
+  background: var(--color-gold);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   13. BPH CAROUSEL
+   ========================================================= */
+
+.bph-grid {
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+
+  margin-top: 8px;
+
+  padding: 50px 8px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
+}
+
+.bph-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.person-card {
+  flex: 0 0 180px;
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-sm);
+
+  overflow: hidden;
+
+  text-align: center;
+
+  scroll-snap-align: center;
+
+  opacity: 0.35;
+
+  transform: scale(0.78);
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.person-card img {
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+
+  border: 3px solid var(--color-gold);
+
+  border-radius: 12px;
+
+  padding: 3px;
+
+  background: var(--color-surface);
+}
+
+.person-info {
+  padding: 14px 10px 16px;
+}
+
+.person-info h3 {
+  margin: 0 0 4px;
+
+  font-family: var(--font-display);
+
+  font-size: 1.05rem;
+
+  color: var(--color-green-900);
+
+  line-height: 1.3;
+}
+
+.person-info p {
+  margin: 0;
+
+  font-size: 0.82rem;
+
+  color: var(--color-text-muted);
+
+  line-height: 1.4;
+}
+
+.person-card.is-active {
+  opacity: 1;
+
+  transform: scale(1.15);
+
+  box-shadow:
+    0 18px 40px rgba(18, 48, 35, 0.15);
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   14. DEPARTMENT CAROUSEL
+   ========================================================= */
+
+.dept-list {
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+
+  margin-top: 8px;
+
+  padding: 50px 8px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
+
+  cursor: grab;
+}
+
+.dept-list::-webkit-scrollbar {
+  display: none;
+}
+
+.dept-list.is-dragging {
+  cursor: grabbing;
+
+  scroll-behavior: auto;
+}
+
+
+/* ---------- Department Card ---------- */
+
+.dept-card {
+  flex: 0 0 220px;
+
+  position: relative;
+
+  display: block;
+
+  width: 220px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-sm);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  scroll-snap-align: center;
+
+  opacity: 0.35;
+
+  transform: scale(0.78);
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+}
+
+.dept-card.is-active {
+  opacity: 1;
+
+  transform: scale(1.12);
+
+  border-color: var(--color-green-700);
+
+  box-shadow:
+    0 18px 40px rgba(18, 48, 35, 0.15);
+
+  z-index: 2;
+}
+
+.dept-card-image {
+  width: 100%;
+  height: 240px;
+
+  overflow: hidden;
+
+  background: var(--color-green-100);
+}
+
+.dept-card-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  pointer-events: none;
+}
+
+.dept-card-info {
+  padding: 16px 16px 18px;
+
+  background: var(--color-surface);
+}
+
+.dept-card-info h3 {
+  margin: 0 0 5px;
+
+  font-family: var(--font-display);
+
+  font-size: 1.05rem;
+
+  color: var(--color-green-900);
+
+  line-height: 1.3;
+}
+
+.dept-card-info span {
+  display: block;
+
+  font-size: 0.78rem;
+
+  color: var(--color-text-muted);
+}
+
+.dept-card:hover {
+  border-color: var(--color-green-700);
+}
+
+.dept-card.is-active:hover {
+  transform: scale(1.12);
+}
+
+
+/* =========================================================
+   15. DEPARTMENT MODAL
+   ========================================================= */
+
+.dept-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(10, 25, 18, 0.65);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.dept-modal.is-open {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.dept-modal-content {
+  position: relative;
+
+  width: min(720px, 100%);
+
+  max-height: 88vh;
+
+  overflow-y: auto;
+
+  padding: 34px;
+
+  background: var(--color-surface);
+
+  border-radius: 20px;
+
+  transform: translateY(20px) scale(0.97);
+
+  transition: transform 0.3s ease;
+}
+
+.dept-modal.is-open .dept-modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.dept-modal-close {
+  position: absolute;
+
+  top: 16px;
+  right: 18px;
+
+  width: 38px;
+  height: 38px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  font-size: 1.7rem;
+
+  line-height: 1;
+
+  color: var(--color-text-muted);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.dept-modal-close:hover {
+  background: var(--color-bg);
+
+  color: var(--color-green-900);
+}
+
+
+/* ---------- Modal Header ---------- */
+
+.dept-modal-header {
+  display: grid;
+
+  grid-template-columns: 150px 1fr;
+
+  gap: 22px;
+
+  align-items: center;
+
+  padding-right: 40px;
+
+  margin-bottom: 28px;
+}
+
+.dept-modal-image {
+  width: 150px;
+  height: 150px;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  background: var(--color-green-100);
+}
+
+.dept-modal-photo {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.dept-modal-heading {
+  min-width: 0;
+}
+
+.dept-modal-header > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  color: var(--color-gold);
+}
+
+.dept-modal-title {
+  margin: 0 0 8px;
+
+  font-family: var(--font-display);
+
+  font-size: 2rem;
+
+  color: var(--color-green-900);
+}
+
+.dept-modal-desc {
+  margin: 0;
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+
+  color: var(--color-text-muted);
+}
+
+.dept-modal-count {
+  margin-top: 12px;
+}
+
+.dept-modal-member-count {
+  display: inline-flex;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  background: var(--color-green-100);
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  color: var(--color-green-900);
+}
+
+
+/* ---------- Modal Section ---------- */
+
+.dept-modal-section {
+  margin-top: 26px;
+}
+
+.dept-modal-section > h3 {
+  margin: 0 0 14px;
+
+  font-family: var(--font-display);
+
+  font-size: 1.15rem;
+
+  color: var(--color-green-900);
+}
+
+
+/* ---------- Department Leader ---------- */
+
+.dept-lead {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+}
+
+.dept-lead > div {
+  padding: 15px;
+
+  background: var(--color-bg);
+
+  border-radius: 12px;
+}
+
+.dept-lead span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 0.72rem;
+
+  color: var(--color-text-muted);
+}
+
+.dept-lead strong {
+  font-size: 0.92rem;
+
+  color: var(--color-green-900);
+}
+
+
+/* ---------- Department Members ---------- */
+
+.dept-modal-members {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 8px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.dept-modal-members li {
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 12px 14px;
+
+  background: var(--color-bg);
+
+  border-radius: 10px;
+}
+
+.dept-modal-members li span {
+  font-size: 0.85rem;
+
+  color: var(--color-green-900);
+}
+
+.dept-modal-members li em {
+  margin-top: 3px;
+
+  font-size: 0.72rem;
+
+  font-style: normal;
+
+  color: var(--color-text-muted);
+}
+
+
+/* ---------- Program Kerja ---------- */
+
+.dept-modal-proker {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.proker-item {
+  padding: 15px 16px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 12px;
+
+  background: var(--color-bg);
+}
+
+.proker-item h4 {
+  margin: 0 0 5px;
+
+  font-size: 0.92rem;
+
+  color: var(--color-green-900);
+}
+
+.proker-item p {
+  margin: 0;
+
+  font-size: 0.8rem;
+
+  line-height: 1.6;
+
+  color: var(--color-text-muted);
+}
+
+.empty-proker {
+  margin: 0;
+
+  font-size: 0.85rem;
+
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   16. NEWS PAGE
+   ========================================================= */
+
+.news-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.news-row {
+  display: grid;
+
+  grid-template-columns: 120px 1fr;
+
+  gap: 24px;
+
+  padding: 22px 0;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.news-row time {
+  font-family: var(--font-display);
+
+  color: var(--color-green-700);
+
+  font-size: 1.1rem;
+}
+
+.news-row time small {
+  display: block;
+
+  font-family: var(--font-body);
+
+  font-size: 0.78rem;
+
+  color: var(--color-text-muted);
+
+  font-weight: 500;
+}
+
+.news-row h3 {
+  font-family: var(--font-display);
+
+  margin: 0 0 6px;
+
+  font-size: 1.2rem;
+}
+
+.news-row p {
+  margin: 0;
+
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   17. FOOTER
+   ========================================================= */
+
+.site-footer {
+  background: var(--color-green-900);
+
+  color: #cddccf;
+
+  margin-top: 64px;
+}
+
+.site-footer .wrap {
+  padding: 48px 24px 32px;
+
+  display: grid;
+
+  grid-template-columns: 1.4fr 1fr 1fr;
+
+  gap: 32px;
+}
+
+.site-footer h4 {
+  color: #fff;
+
+  font-family: var(--font-display);
+
+  font-weight: 500;
+
+  margin: 0 0 14px;
+
+  font-size: 1rem;
+}
+
+.site-footer ul {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  text-decoration: none;
+
+  color: #cddccf;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  font-size: 0.8rem;
+
+  padding: 18px 24px;
+
+  text-align: center;
+
+  color: #9fb3a2;
+}
+
+
+/* =========================================================
+   18. REVEAL ANIMATION
+   ========================================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(16px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   19. FOCUS
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-gold-dark);
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   20. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .reveal {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+
+/* =========================================================
+   21. TABLET
+   ========================================================= */
+
+@media (max-width: 860px) {
+
+  .main-nav {
+    position: fixed;
+
+    inset: 64px 16px auto 16px;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-sm);
+
+    padding: 16px;
+
+    box-shadow:
+      0 12px 24px rgba(18, 48, 35, 0.12);
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    display: none;
+  }
+
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+
+    gap: 14px;
+
+    width: 100%;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .hero .wrap,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .news-grid,
+  .partner-links {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer .wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .news-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dept-card {
+    flex-basis: 200px;
+
+    width: 200px;
+  }
+
+  .dept-card-image {
+    height: 220px;
+  }
+}
+
+
+/* =========================================================
+   22. MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .wrap {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero .wrap {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  section {
+    padding: 48px 0;
+  }
+
+  .bph-grid,
+  .dept-list {
+    gap: 18px;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .person-card {
+    flex-basis: 160px;
+  }
+
+  .person-card img {
+    height: 200px;
+  }
+
+  .dept-card {
+    flex-basis: 190px;
+
+    width: 190px;
+  }
+
+  .dept-card-image {
+    height: 210px;
+  }
+
+  .dept-card-info {
+    padding: 13px;
+  }
+
+  .dept-card-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .dept-modal {
+    padding: 14px;
+  }
+
+  .dept-modal-content {
+    padding: 26px 20px;
+
+    max-height: 92vh;
+  }
+
+  .dept-modal-header {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .dept-modal-image {
+    width: 100%;
+
+    height: 190px;
+  }
+
+  .dept-modal-title {
+    font-size: 1.6rem;
+  }
+
+  .dept-lead,
+  .dept-modal-members {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer .wrap {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}

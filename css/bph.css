@@ -1,0 +1,361 @@
+
+/* =========================================================
+   BPH — FULL WIDTH GREEN EDITORIAL
+   ========================================================= */
+
+/* SECTION BPH: HIJAU PENUH SAMPAI TEPI LAYAR */
+
+.bph-section {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  margin: 0;
+  padding: 50px 0 55px;
+  overflow: hidden;
+
+  color: #fffdf3;
+  background-color: #075d3a;
+
+  /* Foto gedung menyatu dengan warna hijau */
+  background-image:
+    linear-gradient(
+      100deg,
+      rgba(5, 79, 49, 0.97) 0%,
+      rgba(5, 79, 49, 0.92) 42%,
+      rgba(5, 79, 49, 0.78) 72%,
+      rgba(5, 79, 49, 0.72) 100%
+    ),
+    url("../assets/gedung-vokasi.jpg");
+
+  background-size: cover;
+  background-position: center, right 45%;
+  background-repeat: no-repeat;
+}
+
+/* PATTERN KABINET */
+
+.bph-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  background-image: url("../assets/Pattern.png");
+  background-size: 600px auto;
+  background-position: left 25%;
+  background-repeat: repeat;
+
+  opacity: 0.20;
+  pointer-events: none;
+}
+
+/* OVERLAY UNTUK MENYATUKAN FOTO DAN PATTERN */
+
+.bph-section::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 93, 58, 0.05) 0%,
+      rgba(7, 93, 58, 0.08) 55%,
+      rgba(3, 59, 37, 0.32) 100%
+    );
+
+  pointer-events: none;
+}
+
+/* KONTEN DI DALAM SECTION */
+
+.bph-section > .wrap {
+  position: relative;
+  z-index: 1;
+
+  width: calc(100% - 80px);
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   JUDUL BPH
+   ========================================================= */
+
+.bph-section .section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  margin: 0 0 24px;
+  padding: 0 0 18px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.bph-section .section-head h2 {
+  margin: 0;
+
+  color: #fffdf3;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.bph-section .section-head .link-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  flex-shrink: 0;
+
+  color: #f0cf73;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.bph-section .section-head .link-more:hover {
+  gap: 11px;
+  color: #ffffff;
+}
+
+/* =========================================================
+   CAROUSEL BPH
+   ========================================================= */
+
+#bph-grid {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  width: 100%;
+  margin: 0;
+  padding: 28px 4px 35px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  /* Pattern terlihat di sela-sela kartu */
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+#bph-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================================
+   KARTU PENGURUS
+   ========================================================= */
+
+#bph-grid .person-card {
+  position: relative;
+
+  flex: 0 0 230px;
+  width: 230px;
+  min-width: 0;
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  background: #fffdf7;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+
+  opacity: 0.88;
+  transform: translateY(4px);
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* =========================================================
+   FOTO PENGURUS
+   ========================================================= */
+
+#bph-grid .person-card img {
+  display: block;
+
+  width: 100%;
+  height: 290px;
+
+  object-fit: cover;
+  object-position: center top;
+
+  background: #e6ebdf;
+  pointer-events: none;
+
+  transition: transform 0.4s ease;
+}
+
+/* =========================================================
+   INFORMASI PENGURUS
+   ========================================================= */
+
+#bph-grid .person-info {
+  position: relative;
+
+  min-height: 94px;
+  padding: 17px 13px 19px;
+
+  background: #fffdf7;
+  border-top: 2px solid #c69a3d;
+
+  text-align: left;
+}
+
+#bph-grid .person-info h3 {
+  margin: 0 0 7px;
+
+  color: #075637;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+
+  overflow-wrap: anywhere;
+}
+
+#bph-grid .person-info p {
+  margin: 0;
+
+  color: #69766b;
+  font-size: 0.77rem;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   KARTU AKTIF
+   ========================================================= */
+
+#bph-grid .person-card.is-active {
+  z-index: 2;
+
+  opacity: 1;
+  transform: translateY(0);
+
+  border-color: rgba(240, 207, 115, 0.75);
+
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.18);
+}
+
+#bph-grid .person-card.is-active img {
+  transform: scale(1.025);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 860px) {
+  .bph-section {
+    padding: 60px 0 70px;
+  }
+
+  .bph-section > .wrap {
+    width: calc(100% - 48px);
+  }
+
+  #bph-grid {
+    gap: 18px;
+    padding: 24px 4px 32px;
+  }
+
+  #bph-grid .person-card {
+    flex-basis: 205px;
+    width: 205px;
+  }
+
+  #bph-grid .person-card img {
+    height: 260px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — HP
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .bph-section {
+    padding: 45px 0 50px;
+  }
+
+  .bph-section > .wrap {
+    width: calc(100% - 28px);
+  }
+
+  .bph-section .section-head {
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 15px;
+  }
+
+  .bph-section .section-head h2 {
+    font-size: 1.35rem;
+  }
+
+  .bph-section .section-head .link-more {
+    font-size: 0.72rem;
+  }
+
+  #bph-grid {
+    gap: 14px;
+    padding: 20px 3px 28px;
+  }
+
+  #bph-grid .person-card {
+    flex-basis: 175px;
+    width: 175px;
+  }
+
+  #bph-grid .person-card img {
+    height: 225px;
+  }
+
+  #bph-grid .person-info {
+    min-height: 84px;
+    padding: 14px 11px 16px;
+  }
+
+  #bph-grid .person-info h3 {
+    font-size: 0.95rem;
+  }
+
+  #bph-grid .person-info p {
+    font-size: 0.73rem;
+  }
+
+  .bph-section::before {
+    background-size: 420px auto;
+    opacity: 0.16;
+  }
+}
+
+/* =========================================================
+   AKSESIBILITAS
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  #bph-grid .person-card,
+  #bph-grid .person-card img,
+  .bph-section .section-head .link-more {
+    transition: none;
+  }
+}

@@ -1,0 +1,669 @@
+
+/* =========================================================
+   MODAL DEPARTEMEN
+   ========================================================= */
+
+.dept-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(10, 25, 18, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.dept-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+
+/* ---------- Isi Modal ---------- */
+
+.dept-modal-content {
+  position: relative;
+
+  width: min(720px, 100%);
+  max-height: 88vh;
+
+  overflow-y: auto;
+
+  padding: 34px;
+
+  background: var(--color-surface);
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+
+  transform: translateY(20px) scale(0.97);
+
+  transition: transform 0.3s ease;
+}
+
+.dept-modal.is-open .dept-modal-content {
+  transform: translateY(0) scale(1);
+}
+
+
+/* ---------- Scrollbar Modal ---------- */
+
+.dept-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dept-modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dept-modal-content::-webkit-scrollbar-thumb {
+  background: #cbd5c9;
+  border-radius: 10px;
+}
+
+.dept-modal-content::-webkit-scrollbar-thumb:hover {
+  background: #9eae9e;
+}
+
+
+/* ---------- Tombol Close ---------- */
+
+.dept-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+
+  font-size: 1.7rem;
+  line-height: 1;
+
+  color: var(--color-text-muted);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dept-modal-close:hover {
+  background: var(--color-bg);
+  color: var(--color-green-900);
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   HEADER MODAL
+   ========================================================= */
+
+.dept-modal-header {
+  display: grid;
+
+  grid-template-columns: 150px 1fr;
+
+  gap: 22px;
+
+  align-items: center;
+
+  margin-bottom: 28px;
+}
+
+.dept-modal-image {
+  width: 150px;
+  height: 150px;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  background: var(--color-green-100);
+}
+
+.dept-modal-photo {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.dept-modal-heading {
+  min-width: 0;
+
+  padding-right: 40px;
+}
+
+.dept-modal-header > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  color: var(--color-gold);
+}
+
+.dept-modal-title {
+  margin: 0 0 8px;
+
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1.2;
+
+  color: var(--color-green-900);
+}
+
+.dept-modal-desc {
+  margin: 0;
+
+  font-size: 0.9rem;
+  line-height: 1.7;
+
+  color: var(--color-text-muted);
+}
+
+
+/* ---------- Jumlah Anggota ---------- */
+
+.dept-modal-count {
+  margin-top: 12px;
+}
+
+.dept-modal-member-count {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  background: var(--color-green-100);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  color: var(--color-green-900);
+}
+
+
+/* =========================================================
+   SECTION MODAL
+   ========================================================= */
+
+.dept-modal-section {
+  margin-top: 26px;
+}
+
+.dept-modal-section > h3 {
+  margin: 0 0 14px;
+
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1.4;
+
+  color: var(--color-green-900);
+}
+
+
+/* ---------- Kepala & Sekretaris ---------- */
+
+.dept-lead {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+}
+
+.dept-lead > div {
+  min-width: 0;
+
+  padding: 15px;
+
+  background: var(--color-bg);
+
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.dept-lead span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 0.72rem;
+
+  color: var(--color-text-muted);
+}
+
+.dept-lead strong {
+  font-size: 0.92rem;
+  line-height: 1.5;
+
+  color: var(--color-green-900);
+
+  overflow-wrap: break-word;
+}
+
+
+/* ---------- Anggota ---------- */
+
+.dept-modal-members {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 8px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.dept-modal-members li {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  padding: 12px 14px;
+
+  background: var(--color-bg);
+
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dept-modal-members li:hover {
+  border-color: var(--color-green-900);
+  transform: translateY(-2px);
+}
+
+.dept-modal-members li span {
+  font-size: 0.85rem;
+  line-height: 1.5;
+
+  color: var(--color-green-900);
+
+  overflow-wrap: break-word;
+}
+
+.dept-modal-members li em {
+  margin-top: 3px;
+
+  font-size: 0.72rem;
+  font-style: normal;
+  line-height: 1.5;
+
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   PROGRAM KERJA
+   ========================================================= */
+
+.dept-modal-proker {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+/* ---------- Item Program Kerja ---------- */
+
+.proker-item {
+  padding: 15px 16px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+
+  background: var(--color-bg);
+}
+
+.proker-item h4 {
+  margin: 0 0 5px;
+
+  font-size: 0.92rem;
+
+  color: var(--color-green-900);
+}
+
+.proker-item p {
+  margin: 0;
+
+  font-size: 0.8rem;
+  line-height: 1.6;
+
+  color: var(--color-text-muted);
+}
+
+
+/* ---------- Program Kerja Dalam Penyusunan ---------- */
+
+.proker-note {
+  padding: 20px;
+
+  background: #f3f5ee;
+
+  border: 1px solid #e1e8dc;
+  border-radius: 14px;
+}
+
+.proker-note-label {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 12px;
+
+  padding: 6px 11px;
+
+  background: #f8edda;
+
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+
+  color: #96702d;
+}
+
+.proker-note p {
+  margin: 0 0 9px;
+
+  font-size: 0.84rem;
+  line-height: 1.7;
+
+  color: #657267;
+}
+
+.proker-note p:last-of-type {
+  margin-bottom: 0;
+}
+
+
+/* ---------- Link Kalender Kerja ---------- */
+
+.proker-calendar-link {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 18px;
+  padding: 14px;
+
+  background: #fffdf7;
+
+  border: 1px solid #e1e8dc;
+  border-radius: 11px;
+
+  text-decoration: none;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.proker-calendar-link:hover {
+  background: #ffffff;
+
+  border-color: var(--color-green-900);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 16px rgba(22, 75, 53, 0.08);
+}
+
+
+/* Ikon PDF */
+
+.proker-calendar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 9px;
+
+  background: #f8e9e5;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+
+  color: #b94b40;
+}
+
+
+/* Informasi Kalender */
+
+.proker-calendar-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+.proker-calendar-info strong {
+  font-size: 0.84rem;
+  line-height: 1.4;
+
+  color: var(--color-green-900);
+}
+
+.proker-calendar-info small {
+  font-size: 0.72rem;
+  line-height: 1.4;
+
+  color: #899187;
+}
+
+
+/* Ikon Panah */
+
+.proker-calendar-arrow {
+  flex-shrink: 0;
+
+  font-size: 1.1rem;
+
+  color: var(--color-green-900);
+
+  transition: transform 0.2s ease;
+}
+
+.proker-calendar-link:hover .proker-calendar-arrow {
+  transform: translate(3px, -3px);
+}
+
+
+/* ---------- Proker Kosong ---------- */
+
+.empty-proker {
+  margin: 0;
+
+  padding: 15px;
+
+  background: var(--color-bg);
+
+  border: 1px dashed var(--color-border);
+  border-radius: 10px;
+
+  font-size: 0.85rem;
+  line-height: 1.6;
+
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   RESPONSIVE MODAL
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .dept-modal {
+    align-items: flex-start;
+
+    padding: 16px;
+  }
+
+  .dept-modal-content {
+    width: 100%;
+    max-height: 92vh;
+
+    margin: auto 0;
+
+    padding: 24px 20px;
+
+    border-radius: 16px;
+  }
+
+  .dept-modal-close {
+    top: 12px;
+    right: 12px;
+
+    width: 34px;
+    height: 34px;
+  }
+
+  .dept-modal-header {
+    grid-template-columns: 100px 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+  }
+
+  .dept-modal-image {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 12px;
+  }
+
+  .dept-modal-heading {
+    padding-right: 20px;
+  }
+
+  .dept-modal-title {
+    font-size: 1.5rem;
+  }
+
+  .dept-modal-desc {
+    font-size: 0.8rem;
+  }
+
+  .dept-modal-section {
+    margin-top: 22px;
+  }
+
+  .dept-modal-section > h3 {
+    font-size: 1.05rem;
+  }
+
+  .dept-lead {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .dept-modal-members {
+    grid-template-columns: 1fr;
+  }
+
+  .proker-note {
+    padding: 16px;
+  }
+
+  .proker-calendar-link {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .proker-calendar-info strong {
+    font-size: 0.8rem;
+  }
+}
+
+
+@media (max-width: 380px) {
+  .dept-modal {
+    padding: 10px;
+  }
+
+  .dept-modal-content {
+    padding: 22px 16px;
+  }
+
+  .dept-modal-header {
+    grid-template-columns: 80px 1fr;
+    gap: 12px;
+  }
+
+  .dept-modal-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .dept-modal-title {
+    font-size: 1.3rem;
+  }
+
+  .dept-modal-heading {
+    padding-right: 18px;
+  }
+}
