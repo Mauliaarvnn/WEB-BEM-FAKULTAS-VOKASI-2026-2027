@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     footerContainer.innerHTML = await response.text();
 
-    console.log("Footer berhasil dimuat!");
+    // console.log("Footer berhasil dimuat!");
   } catch (error) {
     console.error("Gagal memuat footer:", error);
   }
