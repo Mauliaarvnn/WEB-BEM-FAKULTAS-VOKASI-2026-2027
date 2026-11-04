@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Kegiatan ini menjadi wadah bagi mahasiswa untuk mengembangkan kemampuan berbahasa Inggris, mengasah kreativitas, serta meningkatkan kepercayaan diri melalui berbagai kompetisi. Kehadiran perwakilan BEM Fakultas Vokasi merupakan bentuk partisipasi dan dukungan terhadap kegiatan akademik serta pengembangan potensi mahasiswa di lingkungan Fakultas Vokasi.",
         "Melalui partisipasi dalam kegiatan ini, diharapkan hubungan baik antara BEM dan Program Studi D3 Bahasa Inggris dapat terus terjalin serta mendorong semangat mahasiswa untuk terus mengembangkan kemampuan dan prestasi di bidang akademik maupun nonakademik."
       ],
-      foto: ["assets/berita/Logo.png"]
+      foto: ["assets/berita/logo.png"]
     },
 
     {
